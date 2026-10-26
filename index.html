@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/index-COXDRw0_.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BB7Z0IYl.css">
+    <script type="module" crossorigin src="./assets/index-BAeMi9Xk.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-FUHeTyZs.css">
   </head>
   <body>
     <canvas id="game"></canvas>
@@ -31,6 +31,7 @@
         <div class="label">KILL</div>
         <div id="kills" class="value">0</div>
       </div>
+      <div id="room-hud" class="panel room-hud" hidden></div>
 
       <div id="killfeed" class="killfeed"></div>
       <div id="popups" class="popups"></div>
@@ -59,6 +60,44 @@
           <div><span class="label">Biaya spawn</span><strong id="menu-fee">10</strong></div>
           <div><span class="label">Bounty per kill</span><strong id="menu-bounty">10</strong></div>
         </div>
+        <div class="profile">
+          <label class="field">
+            <span class="label">Nama</span>
+            <input id="player-name" type="text" maxlength="16" placeholder="Pemain" autocomplete="off" />
+          </label>
+          <div class="field">
+            <span class="label">Karakter</span>
+            <div id="char-picker" class="segmented" role="radiogroup" aria-label="Pilih karakter">
+              <button type="button" data-char="barong" role="radio">BARONG</button>
+              <button type="button" data-char="nebula7" role="radio">NEBULA-7</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="mode-tabs" class="tabs" role="tablist">
+          <button type="button" data-mode="bot" role="tab">LAWAN BOT</button>
+          <button type="button" data-mode="online" role="tab">ONLINE PvP</button>
+        </div>
+
+        <div id="online-panel" class="online" hidden>
+          <div id="room-lobby" class="room-lobby">
+            <div class="room-join">
+              <input id="room-code" type="text" maxlength="12" placeholder="KODE ROOM" autocomplete="off" aria-label="Kode room" />
+              <button type="button" id="join-room" class="ghost">GABUNG</button>
+            </div>
+            <div class="room-actions">
+              <button type="button" id="create-room" class="ghost">BUAT ROOM BARU</button>
+              <button type="button" id="public-room" class="ghost">ROOM PUBLIK</button>
+            </div>
+          </div>
+          <div id="room-status" class="room-status" hidden>
+            <div>Room <strong id="room-label">-</strong> &middot; <span id="room-count">1</span> pemain</div>
+            <button type="button" id="copy-room" class="link">Salin kode</button>
+            <button type="button" id="leave-room" class="link">Keluar room</button>
+          </div>
+          <p class="hint">Bagikan kode room ke teman. Kill pemain lain = ambil bounty yang dia bawa.</p>
+        </div>
+
         <p id="menu-result" class="result"></p>
         <button id="play" class="play">SPAWN</button>
         <button id="reset" class="ghost" hidden>Reset dompet (100 kredit)</button>
