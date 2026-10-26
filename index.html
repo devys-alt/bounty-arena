@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bounty Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-COXDRw0_.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BB7Z0IYl.css">
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+
+    <div id="hud" hidden>
+      <div class="crosshair"><span></span><span></span><span></span><span></span></div>
+      <div id="hitmarker" class="hitmarker"></div>
+      <div id="damage-vignette" class="vignette"></div>
+
+      <div class="panel top-left">
+        <div class="label">DOMPET</div>
+        <div id="wallet" class="value">0</div>
+      </div>
+      <div class="panel top-center">
+        <div class="label">BOUNTY DIBAWA</div>
+        <div id="carried" class="value big">0</div>
+        <div class="hint">Mati = hilang &middot; Ekstraksi = aman</div>
+      </div>
+      <div class="panel top-right">
+        <div class="label">KILL</div>
+        <div id="kills" class="value">0</div>
+      </div>
+
+      <div id="killfeed" class="killfeed"></div>
+      <div id="popups" class="popups"></div>
+
+      <div class="panel bottom-left">
+        <div class="label">HP</div>
+        <div class="bar"><div id="health-fill" class="fill"></div></div>
+      </div>
+      <div class="panel bottom-right">
+        <div id="weapon-name" class="label"></div>
+        <div id="ammo" class="value big">30</div>
+      </div>
+
+      <div id="extract" class="extract" hidden>
+        <div class="label">MENGEKSTRAKSI&hellip;</div>
+        <div class="bar"><div id="extract-fill" class="fill green"></div></div>
+      </div>
+    </div>
+
+    <div id="menu" class="overlay">
+      <div class="card">
+        <h1>BOUNTY<span>ARENA</span></h1>
+        <p class="tagline">Bayar untuk spawn. Setiap kill menambah bounty. Mati = semua hilang. Ekstraksi di zona hijau untuk mengamankan kredit.</p>
+        <div class="stats">
+          <div><span class="label">Dompet</span><strong id="menu-wallet">100</strong></div>
+          <div><span class="label">Biaya spawn</span><strong id="menu-fee">10</strong></div>
+          <div><span class="label">Bounty per kill</span><strong id="menu-bounty">10</strong></div>
+        </div>
+        <p id="menu-result" class="result"></p>
+        <button id="play" class="play">SPAWN</button>
+        <button id="reset" class="ghost" hidden>Reset dompet (100 kredit)</button>
+        <p id="loading" class="loading">Memuat map dan karakter&hellip;</p>
+        <div class="controls">
+          <span><kbd>WASD</kbd> gerak</span>
+          <span><kbd>Shift</kbd> lari</span>
+          <span><kbd>Spasi</kbd> lompat</span>
+          <span><kbd>Klik</kbd> tembak</span>
+          <span><kbd>R</kbd> reload</span>
+          <span><kbd>Esc</kbd> jeda</span>
+        </div>
+        <p class="disclaimer">Prototype. Kredit hanya poin dalam game, tidak bisa dibeli atau dicairkan.</p>
+      </div>
+    </div>
+
+  </body>
+</html>
